@@ -50,10 +50,10 @@ public class MocosManager {
 			String href = a.first().attributes().get("href").toString();
 
 			Elements img = e.getElementsByTag("img");
-			String src = a.first().attributes().get("src").toString();
+			String src = img.first().attributes().get("src").toString();
 
 			Elements time = e.getElementsByTag("time");
-			String timeValue = a.first().text();
+			String timeValue = time.first().text();
 
 			Elements h3 = e.getElementsByTag("h3");
 			String name = h3.first().text();

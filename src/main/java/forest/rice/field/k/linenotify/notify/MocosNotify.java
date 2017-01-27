@@ -13,6 +13,7 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.lambda.runtime.Context;
 
+import forest.rice.field.k.linenotify.embedly.DisplayResizeApi;
 import forest.rice.field.k.linenotify.linenotify.LineNotify;
 import forest.rice.field.k.linenotify.mocos.MocosManager;
 import forest.rice.field.k.linenotify.mocos.Recipe;
@@ -41,7 +42,7 @@ public class MocosNotify {
 
 					String message = String.format("\r\n%s\r\n%s", recipe.getName(), recipe.getUrl());
 
-					int responseCode = LineNotify.sendMessage(token, message);
+					int responseCode = LineNotify.sendMessage(token, message, resizedImgsrc(recipe.getImgSrc()));
 
 					if (responseCode == 401) {
 						deleteItem(dynamoDB, token, c.get("state").getS());
@@ -49,6 +50,10 @@ public class MocosNotify {
 				});
 
 		return null;
+	}
+
+	private String resizedImgsrc(String url) {
+		return DisplayResizeApi.resize(url, 240, 240);
 	}
 
 	private List<Map<String, AttributeValue>> scanItem(AmazonDynamoDBClient dynamoDB) {
