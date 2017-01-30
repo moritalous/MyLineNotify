@@ -1,0 +1,14 @@
+{
+    "mocos": {
+        "title": "今日のMOCO'Sキッチン",
+        "description": "今日のMOCO'Sキッチンをお知らせします。",
+        "period": "月曜日～金曜日　AM11:00",
+        "registUrl": "https://goo.gl/VJzHAz"
+    },
+    "danshi": {
+        "title": "今日の男子ごはん",
+        "description": "今日の男子ごはんをお知らせします。",
+        "period": "日曜日　PM3:00",
+        "registUrl": "https://goo.gl/StcZYv"
+    }
+}

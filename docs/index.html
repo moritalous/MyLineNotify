@@ -2,16 +2,37 @@
 <html lang="ja">
 
 <head>
-    <title>タイトル</title>
+    <title>LINE Notify APIで遊ぶ</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 
-<body>
-    <h1>LINE Notify APIで遊ぶ</h1>
-    <p><a href="https://goo.gl/VJzHAz">今日のMOCO'Sキッチン</a></p>
-    <p><a href="https://goo.gl/StcZYv">今日の男子ごはん</a></p>
+<body style="width: 95%; text-align: center;">
+
+    <card-list></card-list>
+
     <p><a href="https://notify-bot.line.me/my/">ステータス確認、登録解除</a></p>
+
+
+    <!-- include the tag -->
+    <script type="riot/tag" src="main.tag"></script>
+    <!-- include riot.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.0.7/riot+compiler.js"></script>
+    <!-- mount the tag -->
+    <script>
+        fetch('data.json')
+            .then(function(data) {
+                return data.json()
+            })
+            .then(function(json) {
+                riot.mount('card-list', json)
+            })
+    </script>
 </body>
 
 </html>

@@ -68,3 +68,4 @@ $RECYCLE.BIN/
 bin
 
 .project
+docs/node_modules
