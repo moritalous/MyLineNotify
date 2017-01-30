@@ -1,4 +1,4 @@
-package forest.rice.field.k.linenotify.linenotify;
+package forest.rice.field.k.linenotify.api.line;
 
 import java.io.IOException;
 

@@ -13,10 +13,10 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.lambda.runtime.Context;
 
-import forest.rice.field.k.linenotify.embedly.DisplayResizeApi;
-import forest.rice.field.k.linenotify.linenotify.LineNotify;
-import forest.rice.field.k.linenotify.mocos.MocosManager;
-import forest.rice.field.k.linenotify.mocos.Recipe;
+import forest.rice.field.k.linenotify.api.embedly.DisplayResizeApi;
+import forest.rice.field.k.linenotify.api.line.LineNotify;
+import forest.rice.field.k.linenotify.api.mocos.MocosManager;
+import forest.rice.field.k.linenotify.api.mocos.Recipe;
 
 public class MocosNotify {
 

@@ -1,4 +1,4 @@
-package forest.rice.field.k.linenotify.mocos;
+package forest.rice.field.k.linenotify.api.mocos;
 
 public class Recipe {
 

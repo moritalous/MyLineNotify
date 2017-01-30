@@ -19,9 +19,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import forest.rice.field.k.linenotify.api.line.TokenResponse;
 import forest.rice.field.k.linenotify.db.IdTable;
 import forest.rice.field.k.linenotify.db.IdTableModel;
-import forest.rice.field.k.linenotify.linenotify.TokenResponse;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;

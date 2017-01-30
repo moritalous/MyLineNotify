@@ -1,4 +1,4 @@
-package forest.rice.field.k.linenotify.embedly;
+package forest.rice.field.k.linenotify.api.embedly;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

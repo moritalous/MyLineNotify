@@ -1,4 +1,4 @@
-package forest.rice.field.k.linenotify.mocos;
+package forest.rice.field.k.linenotify.api.mocos;
 
 import java.io.IOException;
 import java.util.List;
