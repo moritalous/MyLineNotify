@@ -60,9 +60,14 @@ public class MocosNotify {
 
 		Map<String, AttributeValue> expressionAttributeValues = new HashMap<String, AttributeValue>();
 		expressionAttributeValues.put(":access_token", new AttributeValue().withS("NEW"));
+		expressionAttributeValues.put(":typeVal", new AttributeValue().withS("moco"));
+
+		Map<String, String> expressionAttributeNames = new HashMap<>();
+		expressionAttributeNames.put("#t", "type");
 
 		ScanRequest scanRequest = new ScanRequest().withTableName(TABLE_NAME)
-				.withFilterExpression("NOT contains (access_token, :access_token)")
+				.withFilterExpression("#t = :typeVal AND NOT contains (access_token, :access_token)")
+				.withExpressionAttributeNames(expressionAttributeNames)
 				.withExpressionAttributeValues(expressionAttributeValues);
 
 		ScanResult result = dynamoDB.scan(scanRequest);
