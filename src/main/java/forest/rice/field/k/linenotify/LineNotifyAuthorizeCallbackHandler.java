@@ -174,9 +174,4 @@ public class LineNotifyAuthorizeCallbackHandler {
 		return result;
 	}
 
-	public class ResponseFound extends Throwable {
-		public ResponseFound(String uri) {
-			super(uri);
-		}
-	}
 }
