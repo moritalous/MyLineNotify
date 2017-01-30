@@ -28,6 +28,7 @@
     <!-- Square card -->
     <style>
         .demo-card-square.mdl-card {
+            width: 98%;
             height: 160px;
         }
         
