@@ -55,7 +55,7 @@ public class LineNotifyAuthorizeHandler {
 
 	}
 
-	public Object handleRequest(LambdaRequestInput2 input, Context context) throws Exception {
+	public Object handleRequest(RequestInput input, Context context) throws Exception {
 
 		TYPE type = TYPE.getType(this.getType(input));
 		System.out.println("type = " + type.getType());
@@ -125,7 +125,7 @@ public class LineNotifyAuthorizeHandler {
 
 	}
 
-	private String getType(LambdaRequestInput2 input) {
+	private String getType(RequestInput input) {
 		String str = "";
 		try {
 			str = input.getPath().get("type");

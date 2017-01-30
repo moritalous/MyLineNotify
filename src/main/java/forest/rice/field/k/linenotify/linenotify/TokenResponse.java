@@ -1,4 +1,4 @@
-package forest.rice.field.k.linenotify;
+package forest.rice.field.k.linenotify.linenotify;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

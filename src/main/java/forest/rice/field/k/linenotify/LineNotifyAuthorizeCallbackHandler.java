@@ -21,6 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import forest.rice.field.k.linenotify.db.IdTable;
 import forest.rice.field.k.linenotify.db.IdTableModel;
+import forest.rice.field.k.linenotify.linenotify.TokenResponse;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
@@ -65,7 +66,7 @@ public class LineNotifyAuthorizeCallbackHandler {
 
 	}
 
-	public Object handleRequest(LambdaRequestInput2 input2, Context context) throws Exception {
+	public Object handleRequest(RequestInput input2, Context context) throws Exception {
 
 		TYPE type = TYPE.getType(this.getType(input2));
 		System.out.println("type = " + type.getType());
@@ -182,7 +183,7 @@ public class LineNotifyAuthorizeCallbackHandler {
 		return mapper.readValue(json, TokenResponse.class);
 	}
 
-	private String getType(LambdaRequestInput2 input) {
+	private String getType(RequestInput input) {
 		String str = "";
 		try {
 			str = input.getPath().get("type");
