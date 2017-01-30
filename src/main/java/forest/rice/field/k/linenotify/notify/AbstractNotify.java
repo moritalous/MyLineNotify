@@ -81,4 +81,9 @@ public abstract class AbstractNotify {
 		return DisplayResizeApi.resize(url, 240, 240);
 	}
 
+	public void sendOnetimeMessage(String token) {
+		init();
+		sendMessage(token);
+	}
+
 }

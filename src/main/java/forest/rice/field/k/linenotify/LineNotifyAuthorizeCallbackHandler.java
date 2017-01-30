@@ -69,6 +69,8 @@ public class LineNotifyAuthorizeCallbackHandler {
 		// PutItem
 		PutItem(dynamoDB, state, code, token.accessToken, type);
 
+		type.sendOneTimeMessage(token.accessToken);
+
 		throw new Exception(new ResponseFound(SUCCESS_REDIRECT_URI));
 	}
 

@@ -1,5 +1,8 @@
 package forest.rice.field.k.linenotify;
 
+import forest.rice.field.k.linenotify.notify.DanshiNotify;
+import forest.rice.field.k.linenotify.notify.MocosNotify;
+
 public enum TYPE {
 	MOCO("moco"), DANSHI("danshi"), NONE("");
 
@@ -42,4 +45,20 @@ public enum TYPE {
 		return str;
 	}
 
+	public void sendOneTimeMessage(String token) {
+		switch (this) {
+		case MOCO: {
+			MocosNotify notify = new MocosNotify();
+			notify.sendOnetimeMessage(token);
+		}
+			break;
+		case DANSHI: {
+			DanshiNotify notify = new DanshiNotify();
+			notify.sendOnetimeMessage(token);
+		}
+			break;
+		default:
+			break;
+		}
+	}
 }
