@@ -13,12 +13,12 @@ import okhttp3.OkHttpClient;
 public class MocosManager {
 
 	public static void main(String[] args) {
-		List<Recipe> list = new MocosManager().getRecipeList();
+		List<MocosRecipe> list = new MocosManager().getRecipeList();
 
 		System.out.println(list.size());
 	}
 
-	public List<Recipe> getRecipeList() {
+	public List<MocosRecipe> getRecipeList() {
 		return parseHtml(getHtml());
 	}
 
@@ -41,7 +41,7 @@ public class MocosManager {
 		return "http://www.ntv.co.jp/zip/mokomichi/";
 	}
 
-	protected List<Recipe> parseHtml(String html) {
+	protected List<MocosRecipe> parseHtml(String html) {
 		Document document = Jsoup.parse(html);
 		Elements entry = document.getElementsByClass("entry");
 
@@ -61,7 +61,7 @@ public class MocosManager {
 			String url = String.join("", getRequestUrl(), href);
 			String imgSrc = String.join("", getRequestUrl(), src);
 
-			return new Recipe(url, name, imgSrc, timeValue);
+			return new MocosRecipe(url, name, imgSrc, timeValue);
 		}).filter(r -> r.getName() != null && r.getUrl() != null).collect(Collectors.toList());
 	}
 

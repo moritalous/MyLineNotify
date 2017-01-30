@@ -1,13 +1,13 @@
 package forest.rice.field.k.linenotify.api.mocos;
 
-public class Recipe {
+public class MocosRecipe {
 
 	private String url;
 	private String name;
 	private String imgSrc;
 	private String time;
 
-	public Recipe(String url, String name, String imgSrc, String time) {
+	public MocosRecipe(String url, String name, String imgSrc, String time) {
 		super();
 		this.url = url;
 		this.name = name;
