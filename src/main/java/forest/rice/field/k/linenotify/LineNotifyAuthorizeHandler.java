@@ -22,42 +22,9 @@ public class LineNotifyAuthorizeHandler {
 	private static final String REDIRECT_URI = System.getenv("REDIRECT_URI");
 	private static final String FAILED_REDIRECT_URI = System.getenv("FAILED_REDIRECT_URI");
 
-	enum TYPE {
-		MOCO("moco"), DANSHI("danshi"), NONE("");
-
-		private final String type;
-
-		private TYPE(String type) {
-			this.type = type;
-		}
-
-		public String getType() {
-			return type;
-		}
-
-		public static TYPE getType(String str) {
-
-			TYPE.MOCO.getType();
-
-			if (str == null) {
-				return TYPE.NONE;
-			}
-
-			switch (str) {
-			case "moco":
-				return MOCO;
-			case "danshi":
-				return DANSHI;
-			}
-
-			return TYPE.NONE;
-		}
-
-	}
-
 	public Object handleRequest(RequestInput input, Context context) throws Exception {
 
-		TYPE type = TYPE.getType(this.getType(input));
+		TYPE type = TYPE.getType(TYPE.getType(input));
 		System.out.println("type = " + type.getType());
 
 		String requestId = context.getAwsRequestId();
@@ -123,17 +90,6 @@ public class LineNotifyAuthorizeHandler {
 
 		return String.join("&", q);
 
-	}
-
-	private String getType(RequestInput input) {
-		String str = "";
-		try {
-			str = input.getPath().get("type");
-		} catch (Exception e) {
-			e.printStackTrace();
-			str = "";
-		}
-		return str;
 	}
 
 	public class ResponseFound extends Throwable {

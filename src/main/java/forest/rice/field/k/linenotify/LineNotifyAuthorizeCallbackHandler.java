@@ -33,42 +33,9 @@ public class LineNotifyAuthorizeCallbackHandler {
 	private static final String REDIRECT_URI = System.getenv("REDIRECT_URI");
 	private static final String SUCCESS_REDIRECT_URI = System.getenv("SUCCESS_REDIRECT_URI");
 
-	enum TYPE {
-		MOCO("moco"), DANSHI("danshi"), NONE("");
-
-		private final String type;
-
-		private TYPE(String type) {
-			this.type = type;
-		}
-
-		public String getType() {
-			return type;
-		}
-
-		public static TYPE getType(String str) {
-
-			TYPE.MOCO.getType();
-
-			if (str == null) {
-				return TYPE.NONE;
-			}
-
-			switch (str) {
-			case "moco":
-				return MOCO;
-			case "danshi":
-				return DANSHI;
-			}
-
-			return TYPE.NONE;
-		}
-
-	}
-
 	public Object handleRequest(RequestInput input2, Context context) throws Exception {
 
-		TYPE type = TYPE.getType(this.getType(input2));
+		TYPE type = TYPE.getType(TYPE.getType(input2));
 		System.out.println("type = " + type.getType());
 
 		String body = String.class.cast(input2.getBodyJson());
@@ -181,17 +148,6 @@ public class LineNotifyAuthorizeCallbackHandler {
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
 		return mapper.readValue(json, TokenResponse.class);
-	}
-
-	private String getType(RequestInput input) {
-		String str = "";
-		try {
-			str = input.getPath().get("type");
-		} catch (Exception e) {
-			e.printStackTrace();
-			str = "";
-		}
-		return str;
 	}
 
 	private String getClientId(AmazonDynamoDBClient dynamoDB, String id) {
