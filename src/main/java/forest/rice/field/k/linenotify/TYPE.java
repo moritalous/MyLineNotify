@@ -2,9 +2,10 @@ package forest.rice.field.k.linenotify;
 
 import forest.rice.field.k.linenotify.notify.DanshiNotify;
 import forest.rice.field.k.linenotify.notify.MocosNotify;
+import forest.rice.field.k.linenotify.notify.RolaNotify;
 
 public enum TYPE {
-	MOCO("moco"), DANSHI("danshi"), NONE("");
+	MOCO("moco"), DANSHI("danshi"), ROLA("rola"), NONE("");
 
 	private final String type;
 
@@ -18,8 +19,6 @@ public enum TYPE {
 
 	public static TYPE getType(String str) {
 
-		TYPE.MOCO.getType();
-
 		if (str == null) {
 			return TYPE.NONE;
 		}
@@ -29,6 +28,8 @@ public enum TYPE {
 			return MOCO;
 		case "danshi":
 			return DANSHI;
+		case "rola":
+			return ROLA;
 		}
 
 		return TYPE.NONE;
@@ -57,6 +58,11 @@ public enum TYPE {
 			notify.sendOnetimeMessage(token);
 		}
 			break;
+		case ROLA: {
+			RolaNotify notify = new RolaNotify();
+			notify.sendOnetimeMessage(token);
+		}
+
 		default:
 			break;
 		}
