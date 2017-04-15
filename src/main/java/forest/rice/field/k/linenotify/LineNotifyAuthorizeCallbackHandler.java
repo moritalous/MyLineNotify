@@ -34,6 +34,7 @@ public class LineNotifyAuthorizeCallbackHandler {
 	private static final String SUCCESS_REDIRECT_URI = System.getenv("SUCCESS_REDIRECT_URI");
 
 	public Object handleRequest(RequestInput input2, Context context) throws Exception {
+		System.out.println("input2 = " + input2);
 
 		TYPE type = TYPE.getType(TYPE.getType(input2));
 		System.out.println("type = " + type.getType());

@@ -10,5 +10,11 @@
         "description": "今日の男子ごはんをお知らせします。",
         "period": "日曜日　PM3:00",
         "registUrl": "https://goo.gl/StcZYv"
+    },
+    "rola": {
+        "title": "今日のローラの休日",
+        "description": "今日のローラの休日をお知らせします。",
+        "period": "金曜日　AM11:00",
+        "registUrl": "https://goo.gl/JqSLtH"
     }
 }
