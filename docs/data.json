@@ -16,5 +16,11 @@
         "description": "今日のローラの休日をお知らせします。",
         "period": "金曜日　AM11:00",
         "registUrl": "https://goo.gl/JqSLtH"
+    },
+    "shuzo": {
+        "title": "今日の松岡修造の格言",
+        "description": "松岡修造の格言をお知らせします。",
+        "period": "毎日　AM8:00",
+        "registUrl": "https://goo.gl/hzeU3B"
     }
 }
