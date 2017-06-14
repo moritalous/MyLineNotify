@@ -1,12 +1,13 @@
 package forest.rice.field.k.linenotify;
 
 import forest.rice.field.k.linenotify.notify.DanshiNotify;
+import forest.rice.field.k.linenotify.notify.IchiroNotify;
 import forest.rice.field.k.linenotify.notify.MocosNotify;
 import forest.rice.field.k.linenotify.notify.RolaNotify;
 import forest.rice.field.k.linenotify.notify.ShuzoNotify;
 
 public enum TYPE {
-	MOCO("moco"), DANSHI("danshi"), ROLA("rola"), SHUZO("shuzo"), NONE("");
+	MOCO("moco"), DANSHI("danshi"), ROLA("rola"), SHUZO("shuzo"), ICHIRO("ichiro"), NONE("");
 
 	private final String type;
 
@@ -33,6 +34,8 @@ public enum TYPE {
 			return ROLA;
 		case "shuzo":
 			return SHUZO;
+		case "ichiro":
+			return ICHIRO;
 		}
 
 		return TYPE.NONE;
@@ -70,6 +73,11 @@ public enum TYPE {
 			ShuzoNotify notify = new ShuzoNotify();
 			notify.sendOnetimeMessage(token);
 		}
+		case ICHIRO: {
+			IchiroNotify notify = new IchiroNotify();
+			notify.sendOnetimeMessage(token);
+		}
+			break;
 
 		default:
 			break;

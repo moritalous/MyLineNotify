@@ -22,5 +22,11 @@
         "description": "松岡修造の格言をお知らせします。",
         "period": "毎日　AM8:00",
         "registUrl": "https://goo.gl/hzeU3B"
+    },
+    "ichiro": {
+        "title": "今日のイチローの格言",
+        "description": "イチローの格言をお知らせします。",
+        "period": "毎日　AM8:00",
+        "registUrl": "https://goo.gl/waa2bH"
     }
 }
