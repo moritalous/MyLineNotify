@@ -73,6 +73,7 @@ public enum TYPE {
 			ShuzoNotify notify = new ShuzoNotify();
 			notify.sendOnetimeMessage(token);
 		}
+			break;
 		case ICHIRO: {
 			IchiroNotify notify = new IchiroNotify();
 			notify.sendOnetimeMessage(token);

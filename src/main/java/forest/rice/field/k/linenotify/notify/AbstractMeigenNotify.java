@@ -2,7 +2,6 @@ package forest.rice.field.k.linenotify.notify;
 
 import java.util.Calendar;
 
-import forest.rice.field.k.linenotify.TYPE;
 import forest.rice.field.k.linenotify.api.line.LineNotify;
 import forest.rice.field.k.linenotify.api.line.LineNotify.Sticker;
 import forest.rice.field.k.linenotify.api.meigen.IMeigenManager;
@@ -14,11 +13,6 @@ public abstract class AbstractMeigenNotify extends AbstractNotify {
 	@Override
 	void init() {
 		manager = manager();
-	}
-
-	@Override
-	TYPE getType() {
-		return TYPE.SHUZO;
 	}
 
 	@Override
