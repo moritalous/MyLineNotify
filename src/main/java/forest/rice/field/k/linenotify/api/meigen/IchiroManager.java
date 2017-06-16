@@ -1,8 +1,8 @@
-package forest.rice.field.k.linenotify.api.meigen.ichiro;
+package forest.rice.field.k.linenotify.api.meigen;
 
 import java.util.Calendar;
 
-public class IchiroManager {
+public class IchiroManager implements IMeigenManager {
 
 	public static void main(String[] args) {
 		System.out.println(new IchiroManager().getMessage(Calendar.getInstance().get(Calendar.DAY_OF_YEAR)));
@@ -64,6 +64,7 @@ public class IchiroManager {
 			"達成感や満足感を、僕は味わえば味わうほど、前に進めると思う。小さなことでも満足することは、すごく大事なこと。それを味わうと次へのやる気が生まれてくると、僕は経験上信じている。",
 			"負けているときに落ち込んだり、勝っているときに喜ぶチームは怖くない。負けているのに元気なチーム、勝っているのに喜ばないチームこそが怖い。" };
 
+	@Override
 	public String getMessage(int num) {
 		return list[num % list.length];
 	}
