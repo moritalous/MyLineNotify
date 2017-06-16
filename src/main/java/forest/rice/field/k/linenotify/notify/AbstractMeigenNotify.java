@@ -5,15 +5,15 @@ import java.util.Calendar;
 import forest.rice.field.k.linenotify.TYPE;
 import forest.rice.field.k.linenotify.api.line.LineNotify;
 import forest.rice.field.k.linenotify.api.line.LineNotify.Sticker;
-import forest.rice.field.k.linenotify.api.meigen.shuzo.ShuzoManager;
+import forest.rice.field.k.linenotify.api.meigen.IMeigenManager;
 
-public class AbstractMeigenNotify extends AbstractNotify {
+public abstract class AbstractMeigenNotify extends AbstractNotify {
 
-	private ShuzoManager manager;
+	private IMeigenManager manager;
 
 	@Override
 	void init() {
-		manager = new ShuzoManager();
+		manager = manager();
 	}
 
 	@Override
@@ -27,4 +27,6 @@ public class AbstractMeigenNotify extends AbstractNotify {
 
 		return LineNotify.sendMessage(token, message, Sticker.POSITIVE);
 	}
+
+	abstract IMeigenManager manager();
 }

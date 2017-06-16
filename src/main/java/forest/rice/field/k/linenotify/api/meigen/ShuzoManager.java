@@ -1,8 +1,8 @@
-package forest.rice.field.k.linenotify.api.meigen.shuzo;
+package forest.rice.field.k.linenotify.api.meigen;
 
 import java.util.Calendar;
 
-public class ShuzoManager {
+public class ShuzoManager implements IMeigenManager {
 
 	public static void main(String[] args) {
 		System.out.println(new ShuzoManager().getMessage(Calendar.getInstance().get(Calendar.DAY_OF_YEAR)));
@@ -94,6 +94,7 @@ public class ShuzoManager {
 			"短所を直すことはもちろん大事なのですが、短所是正法だと自分の欠点ばかりに意識が向いてしまいます。すると、「自分は駄目だ」という情報が脳に伝わり、体も気持ちも「ダメモード」に入り、ダメの二乗、三乗になってしまいます。「よくなりたい」と思っているのに、自分で自分にダメージを与え、どんどん悪い方向に行ってしまうのです。",
 			"人は長所を認められると、もっと上に行こうとします。テニスでも褒めると上達しようとし、弱点だと思っていた部分さえ自然と修正されていくことが多いものです。逆に短所ばかり指摘されて、「こうしろ、ああしろ」と直されていると、得意だった部分までおかしくなってしまうことがあります。" };
 
+	@Override
 	public String getMessage(int num) {
 		return list[num % list.length];
 	}
