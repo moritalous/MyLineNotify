@@ -5,9 +5,10 @@ import forest.rice.field.k.linenotify.notify.IchiroNotify;
 import forest.rice.field.k.linenotify.notify.MocosNotify;
 import forest.rice.field.k.linenotify.notify.RolaNotify;
 import forest.rice.field.k.linenotify.notify.ShuzoNotify;
+import forest.rice.field.k.linenotify.notify.SwitchArrivalNotify;
 
 public enum TYPE {
-	MOCO("moco"), DANSHI("danshi"), ROLA("rola"), SHUZO("shuzo"), ICHIRO("ichiro"), NONE("");
+	MOCO("moco"), DANSHI("danshi"), ROLA("rola"), SHUZO("shuzo"), ICHIRO("ichiro"), SWITCH("switch"), NONE("");
 
 	private final String type;
 
@@ -36,6 +37,8 @@ public enum TYPE {
 			return SHUZO;
 		case "ichiro":
 			return ICHIRO;
+		case "switch":
+			return TYPE.SWITCH;
 		}
 
 		return TYPE.NONE;
@@ -77,6 +80,11 @@ public enum TYPE {
 		case ICHIRO: {
 			IchiroNotify notify = new IchiroNotify();
 			notify.sendOnetimeMessage(token);
+		}
+			break;
+		case SWITCH: {
+			SwitchArrivalNotify notify = new SwitchArrivalNotify();
+			notify.sendCustomMessage(token);
 		}
 			break;
 
