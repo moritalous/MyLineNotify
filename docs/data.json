@@ -1,21 +1,9 @@
 {
-    "mocos": {
-        "title": "今日のMOCO'Sキッチン",
-        "description": "今日のMOCO'Sキッチンをお知らせします。",
-        "period": "月曜日～金曜日　AM11:00",
-        "registUrl": "https://goo.gl/VJzHAz"
-    },
-    "danshi": {
-        "title": "今日の男子ごはん",
-        "description": "今日の男子ごはんをお知らせします。",
-        "period": "日曜日　PM3:00",
-        "registUrl": "https://goo.gl/StcZYv"
-    },
-    "rola": {
-        "title": "今日のローラの休日",
-        "description": "今日のローラの休日をお知らせします。",
-        "period": "金曜日　AM11:00",
-        "registUrl": "https://goo.gl/JqSLtH"
+    "switch": {
+        "title": "スイッチチェック",
+        "description": "スイッチの在庫をチェックします",
+        "period": "1分間隔でチェック",
+        "registUrl": "https://goo.gl/E17Pni"
     },
     "shuzo": {
         "title": "今日の松岡修造の格言",
@@ -28,5 +16,17 @@
         "description": "イチローの格言をお知らせします。",
         "period": "毎日　AM8:00",
         "registUrl": "https://goo.gl/waa2bH"
+    },
+    "mocos": {
+        "title": "今日のMOCO'Sキッチン",
+        "description": "今日のMOCO'Sキッチンをお知らせします。",
+        "period": "月曜日～金曜日　AM11:00",
+        "registUrl": "https://goo.gl/VJzHAz"
+    },
+    "danshi": {
+        "title": "今日の男子ごはん",
+        "description": "今日の男子ごはんをお知らせします。",
+        "period": "日曜日　PM3:00",
+        "registUrl": "https://goo.gl/StcZYv"
     }
 }
